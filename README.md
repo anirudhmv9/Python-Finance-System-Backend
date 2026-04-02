@@ -22,7 +22,7 @@ A robust, production-ready Python backend for personal finance tracking. This sy
 
 ## Project Structure:
 
-Root Directory
+Root Directory:
 
 At the highest level, the project contains essential configuration and setup files:
 
@@ -38,11 +38,11 @@ tests/: A dedicated directory for unit and integration tests to ensure system re
 
 README.md: Provides comprehensive documentation on how to set up, run, and test the project.
 
-The app/ Core
+The app/ Core:
 
 The internal logic of the system is divided into functional layers within the app/ folder:
 
-1. The Interface Layer (routers/)
+1. The Interface Layer (routers/):
    
 This layer handles the API endpoints and HTTP communication:
 
@@ -54,7 +54,7 @@ summaries.py: Provides the endpoints for high-level financial analytics and bala
 
 users.py: Handles administrative tasks related to user account management.
 
-2. The Business Logic Layer (services/)
+2. The Business Logic Layer (services/):
    
 This is the "brain" of the application where complex data processing happens, keeping the routers thin and readable:
 
@@ -64,7 +64,7 @@ transaction_service.py: Manages the logic for filtering records by date, type, o
 
 user_service.py: Handles the underlying logic for creating users and assigning roles.
 
-3. The Data & Security Layer
+3. The Data & Security Layer:
    
 These files define how data is stored, validated, and secured:
 
