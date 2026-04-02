@@ -92,5 +92,7 @@ How to test Roles:
 
 The email and password for different roles are as follows:
   viewer :  email - viewer@example.com and  password - ViewerPass123
+  
   analyst : email - analyst@example.com and password - AnalystPass123
+  
   admin :  email - admin@example.com and password - AdminPass123
