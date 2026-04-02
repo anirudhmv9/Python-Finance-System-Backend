@@ -86,6 +86,7 @@ config.py: Loads and validates environment variables to ensure the application s
 
 
 
+
 -   🏁 Getting Started
 1. Prerequisites
 Python 3.10 or higher
