@@ -75,6 +75,7 @@ uvicorn app.main:app --reload
 
 📖 API Documentation & Testing
 Once the server is running, navigate to:
+
 http://127.0.0.1:8000/docs
 
 
