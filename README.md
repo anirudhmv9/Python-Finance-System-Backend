@@ -22,31 +22,63 @@ A robust, production-ready Python backend for personal finance tracking. This sy
 
 ## Project Structure:
 
-Finance_System/
-├── app/
-│   ├── routers/            # API Route Controllers (End points)
-│   │   ├── auth.py         # Login and JWT issuance
-│   │   ├── transactions.py # Income/Expense CRUD logic
-│   │   ├── summaries.py    # Analytics and totals endpoints
-│   │   └── users.py        # Admin user management
-│   ├── services/           # Core Business Logic (Processing Layer)
-│   │   ├── summary_service.py     # Analytics and balance calculations
-│   │   ├── transaction_service.py # Filtering and record management
-│   │   └── user_service.py        # User creation and role logic
-│   ├── models.py           # SQLAlchemy Database models
-│   ├── schemas.py          # Pydantic models (Data validation & Serialization)
-│   ├── dependencies.py     # Role-Based Access Control (RBAC) & Auth injectors
-│   ├── security.py         # JWT, Bcrypt hashing, and password logic
-│   ├── database.py         # SQLite connection and session management
-│   ├── config.py           # Environment variable and settings loader
-│   └── main.py             # FastAPI entry point & app initialization
-├── tests/                  # Unit and integration test suite
-├── seed_db.py              # Database initialization and mock data script
-├── requirements.txt        # Python dependencies
-├── .env                    # Environment variables (DB URL, Secret Key)
-├── .env.example            # Template for environment variables
-└── README.md               # Project documentation
+Root Directory
 
+At the highest level, the project contains essential configuration and setup files:
+
+main.py: Serves as the entry point for the FastAPI application, where the app is initialized and routers are connected.
+
+seed_db.py: A utility script used to initialize the database schema and populate it with mock data and default user roles.
+
+requirements.txt: Lists all external Python dependencies required to run the backend.
+
+.env & .env.example: Manage environment-specific configurations like database URLs and security keys, keeping sensitive data out of the source code.
+
+tests/: A dedicated directory for unit and integration tests to ensure system reliability.
+
+README.md: Provides comprehensive documentation on how to set up, run, and test the project.
+
+The app/ Core
+
+The internal logic of the system is divided into functional layers within the app/ folder:
+
+1. The Interface Layer (routers/)
+   
+This layer handles the API endpoints and HTTP communication:
+
+auth.py: Manages user login and the issuance of JWT access tokens.
+
+transactions.py: Handles CRUD operations (Create, Read, Update, Delete) for income and expense records.
+
+summaries.py: Provides the endpoints for high-level financial analytics and balance totals.
+
+users.py: Handles administrative tasks related to user account management.
+
+2. The Business Logic Layer (services/)
+   
+This is the "brain" of the application where complex data processing happens, keeping the routers thin and readable:
+
+summary_service.py: Contains the logic for calculating balances, category breakdowns, and financial insights.
+
+transaction_service.py: Manages the logic for filtering records by date, type, or category.
+
+user_service.py: Handles the underlying logic for creating users and assigning roles.
+
+3. The Data & Security Layer
+   
+These files define how data is stored, validated, and secured:
+
+models.py: Defines the database schema using SQLAlchemy ORM models.
+
+schemas.py: Defines Pydantic models used for strict data validation and serializing API responses.
+
+database.py: Manages the connection to the SQLite database and the lifecycle of database sessions.
+
+security.py: Implements the cryptographic logic for password hashing (Bcrypt) and JWT handling.
+
+dependencies.py: Contains the logic for Role-Based Access Control (RBAC), injecting user permissions directly into the API routes.
+
+config.py: Loads and validates environment variables to ensure the application starts with the correct settings.
 
 
 -   🏁 Getting Started
